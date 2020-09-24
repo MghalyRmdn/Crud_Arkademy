@@ -1,0 +1,45 @@
+.jumbotron {
+	background-image: url(../img/slider1.jpg);
+	background-size: cover;
+	text-align: center;
+	margin-top: 7px;
+}
+
+h1.font-weight-bold {
+	text-align: center;
+	color: black;
+}
+
+
+
+.jumbotron .display-4 {
+	color: lightblue;
+	margin-top: 200px;
+}
+
+.jumbotron p {
+	color: black;
+	font-size: 25px;
+
+}
+
+.jumbotron hr {
+	border-color: #f05f40;
+	width: 70px;
+	border-width: 3px;
+}
+
+.jumbotron .btn {
+	background-color: #f05f40;
+	border: none;
+	border-radius: 25px;
+	padding-right: 25px;
+	padding-left: 25px;
+	margin-top: 40px;
+}
+
+p.mt-1.ml-3.font-weight-bold {
+	background-color: orange;
+	width: 850px;
+
+}

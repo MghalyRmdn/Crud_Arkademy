@@ -1,0 +1,45 @@
+/* .card.mr-2.ml-2 {
+	border: black;
+	margin-top: 3%;
+} */
+
+/* .card p {
+	margin-top: -10px;
+	margin-bottom: 1px;
+} */
+
+p.mt-1.font-weight-bold {
+	background-color: rgb(236, 232, 1);
+	color: honeydew;
+	width: 500px;
+}
+
+
+i.fas.fa-star {
+	color: goldenrod;
+}
+
+i.fas.fa-star-half-alt {
+	color: goldenrod;
+}
+
+.row .card:hover {
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+	transform: scale(1.02);
+}
+
+a#btn-cart {
+	background-color: gold;
+	color: honeydew;
+}
+
+a#btn-detail {
+	background-color: lightseagreen;
+	color: whitesmoke;
+}
+
+a#btn-login {
+	margin-top: 5%;
+	background-color: mediumblue;
+	color: whitesmoke;
+}
