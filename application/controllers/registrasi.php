@@ -20,7 +20,7 @@ class Registrasi extends CI_Controller
                 "nama" => $this->input->post("nama"),
                 "username" => $this->input->post("username"),
                 "password" => MD5($this->input->post("password_1")),
-                "role_id" => "",
+                "role_id" => 2,
             ];
 
             $this->db->insert('user', $data);

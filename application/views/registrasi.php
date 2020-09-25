@@ -13,7 +13,6 @@
                             </div>
                             <form class="user" method="POST" action="<?= base_url('registrasi/index') ?>">
                                 <div class="form-group">
-                                    <input type="hidden" name="role_id" value="2">
                                     <input type="text" class="form-control form-control-user" id="exampleInputEmail" placeholder="Masukan Nama Lengkap" name="nama">
                                     <?= form_error('nama', '<div class="text-danger small ml-2">', '</div>'); ?>
                                 </div>

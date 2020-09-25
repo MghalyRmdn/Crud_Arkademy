@@ -24,13 +24,8 @@ class Auth extends CI_Controller
               </div>');
                 redirect('auth/login');
             } else {
-                $this->session->set_userdata('id_customer', $auth->id_customer);
-                $this->session->set_userdata('id_admin', $auth->id_admin);
                 $this->session->set_userdata('username', $auth->username);
                 $this->session->set_userdata('role_id', $auth->role_id);
-                $this->session->set_userdata('nama', $auth->nama);
-                $this->session->set_userdata('nama_admin', $auth->nama_admin);
-
                 switch ($auth->role_id) {
                     case 1:
                         redirect('admin/dashboard_admin');

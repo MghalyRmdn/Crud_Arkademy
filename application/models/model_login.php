@@ -10,21 +10,21 @@ class Model_login extends CI_Model
         $result = $this->db
             ->where('username', $username)
             ->where('password', md5($password))
-            ->limit(2)
-            ->get('user');
-
-        $hasil = $this->db
-            ->where('username', $username)
-            ->where('password', md5($password))
-            ->limit(3)
+            ->limit(1)
             ->get('admin');
 
-        if ($result->num_rows() > 0) {
+        // $hasil = $this->db
+        //     ->where('username', $username)
+        //     ->where('password', md5($password))
+        //     ->limit(1)
+        //     ->get('user');
+
+        if ($result->num_rows() == 1) {
             return $result->row();
-        } elseif ($hasil->num_rows() > 0) {
-            return $hasil->row();
+            // } elseif ($hasil->num_rows() > 0) {
+            //     return $hasil->row();
         } else {
-            return FALSE;
+            return array();
         }
     }
 }

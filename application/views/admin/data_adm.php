@@ -2,7 +2,7 @@
     <button class="btn btn-sm btn-primary mb-3" data-toggle="modal" data-target="#tambah_data"><i class="fas fa-sm fa-plus-circle mr-1"></i>Tambah Data Admin</button>
 
     <span class="mt-2 p-2"><?= $this->session->flashdata('pesan') ?></span>
-    <table class="table table-bordered table-responsive">
+    <table class="table table-bordered table-hover">
         <thead class="thead-dark">
             <tr>
                 <th scope="col">NO</th>
@@ -10,7 +10,7 @@
                 <th scope="col">Nama Admin</th>
                 <th scope="col">Username</th>
                 <th scope="col">Email</th>
-                <th scope="col">Password</th>
+
                 <th scope="col">No.Rekening</th>
                 <th scope="col" colspan="3">AKSI</th>
             </tr>
@@ -22,15 +22,16 @@
                 <tr>
                     <td><?= $no++; ?></td>
                     <td><img width="120px" class="rounded" src="<?= base_url('upload/' . $adm->photo) ?>" alt="GO-Back"></td>
-                    <td><?= $adm->nama ?></td>
+                    <td><?= $adm->nama_admin ?></td>
                     <td><?= $adm->username ?></td>
                     <td><?= $adm->email ?></td>
-                    <td><?= md5($adm->password)  ?></td>
                     <td><?= $adm->no_rekening ?></td>
                     <td>
                         <?= anchor('admin/data_admin/edit/' . $adm->id, '<div class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></div>') ?>
                     </td>
-
+                    <td>
+                        <?= anchor('admin/data_admin/detail/' . $adm->id, '<div class="btn btn-info btn-sm"><i class="fas fa-search-plus"></i></div>') ?>
+                    </td>
                     <td>
                         <a onclick="return confirm('Apakah anda yakin?')" href="<?= base_url('admin/data_admin/hapus/' . $adm->id) ?>" class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></a>
                     </td>
@@ -55,7 +56,8 @@
 
                     <div class="form-group">
                         <label for="Nama Admin">Nama Admin</label>
-                        <input type="text" name="nama" class="form-control">
+                        <input type="text" name="nama_admin" class="form-control">
+                        <input type="hidden" name="role_admin" value="1">
                         <?= form_error('nama', '<div class="text-danger small ml-2">', '</div>'); ?>
                     </div>
                     <div class="form-group">
@@ -81,25 +83,17 @@
 
                     </div>
                     <div class="form-group">
-
-                        <div class="form-group">
-                            <label for="password">Role ID</label>
-                            <select name="role_id">
-                                <option value="1">Admin</option>
-                            </select>
-                            <?= form_error('password', '<div class="text-danger small ml-2">', '</div>'); ?>
-
-                        </div>
-                        <div class="form-group">
-                            <label>Photo</label><br>
-                            <input type="file" name="photo" class="form-control">
-                        </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="reset" class="btn btn-danger" data-dismiss="modal">Hapus</button>
-                        <button type="submit" class="btn btn-primary">Simpan</button>
+                    <div class="form-group">
+                        <label>Photo</label><br>
+                        <input type="file" name="photo" class="form-control">
                     </div>
-                </form>
             </div>
+            <div class="modal-footer">
+                <button type="reset" class="btn btn-danger" data-dismiss="modal">Hapus</button>
+                <button type="submit" class="btn btn-primary">Simpan</button>
+            </div>
+            </form>
         </div>
     </div>
+</div>
